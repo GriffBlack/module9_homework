@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork</title>
+</head>
+<style>
+    body {
+        box-sizing: border-box;
+    }
+
+    .container {
+        /* display: flex;
+        justify-content: center;
+        align-items: flex-end; */
+        /* font-size: 11px; */
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .form_head {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form_text,
+    .form_input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label,
+    input {
+        margin: 5px;
+    }
+
+    .result,
+    .frm {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .btn {
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 100px;
+        height: 25px;
+    }
+
+    .result p {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 300px;
+        margin: 20px;
+    }
+
+    .card-image {
+        display: block;
+        max-width: 300px;
+        max-height: 300px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form class="form_head">
+            <div class="form_text">
+                <label for="width">Введите ширину</label>
+                <label for="height">Введите высоту</label>
+            </div>
+
+            <div class="form_input">
+                <input class="width" type="number" min="100" value="100">
+                <input class="height" type="number" min="100" value="100">
+            </div>
+        </form>
+        <div class="frm">
+            <button class="btn j-btn-request">Запрос</button>
+            <div class="result j-result">- -</div>
+        </div>
+
+
+    </div>
+
+    <script src="./task_4.js"></script>
+</body>
+
+</html>
