@@ -4,7 +4,6 @@ const resultNode = document.querySelector('.j-result');
 const btnNode = document.querySelector('.j-btn-request');
 // проверяем LocalStorage
 let localString = localStorage.getItem('myKey');
-console.log(localString)
 if (localString) {
   displayResult(JSON.parse(localString))
 }
@@ -26,8 +25,6 @@ function printErr(numErr) {
 }
 // валидация инпутов
 function validInput(inputNum, inputLimit) {
-  console.log(inputNum);
-  console.log(inputLimit);
   if ((inputNum < 1 || inputNum > 10) && (inputLimit < 1 || inputLimit > 10)) printErr(1)
   else if (inputNum < 1 || inputNum > 10) printErr(2)
   else if (inputLimit < 1 || inputLimit > 10) printErr(3)
@@ -59,16 +56,14 @@ btnNode.addEventListener('click', () => {
   let imgNumber = document.querySelector('.number').value;
   let imgLimit = document.querySelector('.limit').value;
   let errValid = validInput(imgNumber, imgLimit);
-  console.log(errValid);
     if (!errValid) {
-        let resUrl = ` https://picsum.photos/v2/list?page=${imgNumber}&limit=${imgLimit}`;
+      let resUrl = ` https://picsum.photos/v2/list?page=${imgNumber}&limit=${imgLimit}`;
       fetch(resUrl)
-              .then(response => response.json())
+        .then(response => response.json())
         .then((data) => {
           displayResult(data);
           localStorage.setItem('myKey', JSON.stringify(data))
-          console.log(data)
         })
-            .catch(() => {console.log('Error')})
-    } else printErr(3);   
+      .catch(() => {console.log('Error')})
+    }   
 })
